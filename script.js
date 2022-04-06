@@ -58,7 +58,7 @@ console.log('Nested2: ', e1, e2, e3);
 const [o = 1, p = 0, t = 2] = [, , 9];
 console.log(o, p, t);
 
-//Destructuring objects
+// #Destructuring objects
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -68,3 +68,21 @@ const {
   categories: tags,
 } = restaurant;
 console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// ##Mutating variables
+let m = 111;
+let n = 999;
+const obj = { m: 23, n: 7, c: 14 };
+({ m, n } = obj);
+console.log(m, n);
+// ## Nested objects
+const { fri } = openingHours;
+console.log(fri);
+// ### Organic
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
