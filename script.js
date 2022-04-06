@@ -43,7 +43,7 @@ const [fst, , trd] = restaurant.categories;
 console.log(f, s);
 console.log(fst, trd);
 
-// Nested arrays
+// Nested arrays destructuring
 const nested = [2, 4, [5, 8]];
 const [q, , w] = nested;
 console.log('Nested: ', q, w);
@@ -53,3 +53,11 @@ console.log('Nested2: ', e);
 
 const [e1, , [e2, e3]] = nested;
 console.log('Nested2: ', e1, e2, e3);
+
+// Default values
+const [o = 1, p = 0, t = 2] = [, , 9];
+console.log(o, p, t);
+
+//Destructuring objects
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
