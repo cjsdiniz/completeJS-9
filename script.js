@@ -70,6 +70,11 @@ console.log("Menu Cp': ", ...mainMenuCp);
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
+// ### Iterables
+const str = 'Letter';
+const letters = [...str, "'", 's'];
+console.log(...letters);
+
 /*
 restaurant.orderDelivery({
   time: '22:30',
