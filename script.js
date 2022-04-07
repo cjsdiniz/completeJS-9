@@ -42,10 +42,17 @@ const restaurant = {
       will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ingr1, ingr2, ...rest) {
+    console.log(
+      `Here's your pasta with the ingredients: ${ingr1},${ingr2},${rest}`
+    );
+  },
 };
 
 // # Spread operator
 // ## In Arrays
+/*
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
 console.log('Old arr: ', badNewArray);
@@ -69,11 +76,29 @@ console.log("Menu Cp': ", ...mainMenuCp);
 // ### Join arrays
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
-
+*/
 // ### Iterables
-const str = 'Letter';
-const letters = [...str, "'", 's'];
-console.log(...letters);
+// const str = 'Letter';
+// const letters = [...str, "'", 's'];
+// console.log(...letters);
+
+// #### Pasta
+// const ings = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+const ings = ['cheese', 'tomato', 'ham', 'mushrooms'];
+//console.log(ings);
+restaurant.orderPasta(...ings);
+
+//Objects
+const newRest = { ...restaurant, founded: 1980 };
+console.log(newRest);
+
+const restaurantCp = { ...restaurant };
+restaurantCp.name = 'Restaurant Roma';
+console.log(restaurant.name, '\n', restaurantCp.name);
 
 /*
 restaurant.orderDelivery({
