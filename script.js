@@ -43,9 +43,32 @@ const restaurant = {
     );
   },
 };
+
+// # Spread operator
+// ## In Arrays
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArray);
+console.log('Old arr: ', badNewArray);
+
+const newArr = [1, 2, arr];
+console.log('New arr: ', newArr);
+
+const newSpreadArr = [1, 2, ...arr];
+console.log('Spread arr: ', newSpreadArr);
+console.log(...newSpreadArr);
+
+// ###Create new array
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// ### Copy arrays
+const mainMenuCp = [...restaurant.mainMenu];
+console.log('Menu Cp: ', mainMenuCp);
+console.log("Menu Cp': ", ...mainMenuCp);
+
+// ### Join arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
 
 /*
 restaurant.orderDelivery({
