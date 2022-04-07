@@ -26,7 +26,42 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+      will be delivered to ${address} at ${time}`
+    );
+  },
 };
+const arr = [7, 8, 9];
+const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArray);
+
+/*
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole,21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole,21',
+  starterIndex: 1,
+});
+
+
+
 
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -83,6 +118,8 @@ const { fri } = openingHours;
 console.log(fri);
 // ### Organic
 const {
-  fri: { open, close },
+  fri: { open: i, close: j },
 } = openingHours;
-console.log(open, close);
+console.log(i, j);
+
+*/
