@@ -48,6 +48,10 @@ const restaurant = {
       `Here's your pasta with the ingredients: ${ingr1},${ingr2},${rest}`
     );
   },
+
+  orderPizza: function (mainIngr, ...otherIngr) {
+    console.log(mainIngr, ...otherIngr);
+  },
 };
 
 // # 1) Destructuring: Spread operator
@@ -197,3 +201,19 @@ console.log(i, j);
 */
 
 // 2) Functions
+const add = function (...nums) {
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(2, 3, 1, 4);
+add(2, 3, 8, 5, 2);
+
+const x = [23, 5, 12];
+add(...x);
+
+restaurant.orderPizza('cheese', 'tomato', 'ham', 'mushrooms');
+restaurant.orderPizza('mushrooms');
