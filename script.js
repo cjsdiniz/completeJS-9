@@ -50,7 +50,7 @@ const restaurant = {
   },
 };
 
-// # Spread operator
+// # 1) Destructuring: Spread operator
 // ## In Arrays
 /*
 const arr = [7, 8, 9];
@@ -88,6 +88,9 @@ console.log(menu);
 //   prompt('Ingredient 2?'),
 //   prompt('Ingredient 3?'),
 // ];
+
+// SPREAD:
+/*
 const ings = ['cheese', 'tomato', 'ham', 'mushrooms'];
 //console.log(ings);
 restaurant.orderPasta(...ings);
@@ -96,10 +99,26 @@ restaurant.orderPasta(...ings);
 const newRest = { ...restaurant, founded: 1980 };
 console.log(newRest);
 
+//
 const restaurantCp = { ...restaurant };
 restaurantCp.name = 'Restaurant Roma';
 console.log(restaurant.name, '\n', restaurantCp.name);
 
+
+const arr = [1, 2, ...[3, 4, 5]];
+console.log(arr);
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, ...others);
+console.log(a, b, others);
+
+const [p, , r, ...other] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log('Out1: ', p, r, other);
+console.log('Out2: ', p, r, ...other);
+console.log('Out3: ', ...other);
+
+const { sat, ...wd } = restaurant.openingHours;
+console.log('Weekdays: ', wd);
+*/
 /*
 restaurant.orderDelivery({
   time: '22:30',
@@ -176,3 +195,5 @@ const {
 console.log(i, j);
 
 */
+
+// 2) Functions
