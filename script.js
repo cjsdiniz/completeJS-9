@@ -201,6 +201,7 @@ console.log(i, j);
 */
 
 // 2) Functions
+/*
 const add = function (...nums) {
   let sum = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -217,9 +218,11 @@ add(...x);
 
 restaurant.orderPizza('cheese', 'tomato', 'ham', 'mushrooms');
 restaurant.orderPizza('mushrooms');
+*/
 
 // # Short-circuiting
 // ## OR operator
+/*
 console.log(3 || 'Mike');
 console.log('' || 'Mike');
 console.log(true || 0);
@@ -245,3 +248,48 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+*/
+
+// ## Nullish values: null and undefined (NOT 0 or '')
+/*
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+
+// ## Logical asssignment operators
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+/*
+// ### OR Assignment operator
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+*/
+/*
+// ### OR Assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+console.log('Rest1: ', rest1.numGuests);
+console.log('Rest2: ', rest2.numGuests);
+*/
+
+// ### AND Assignment operator
+rest1.owner &&= '<Anonymous>';
+rest2.owner &&= '<Anonymous>';
+console.log(rest1);
+console.log(rest2);
