@@ -217,3 +217,31 @@ add(...x);
 
 restaurant.orderPizza('cheese', 'tomato', 'ham', 'mushrooms');
 restaurant.orderPizza('mushrooms');
+
+// # Short-circuiting
+// ## OR operator
+console.log(3 || 'Mike');
+console.log('' || 'Mike');
+console.log(true || 0);
+console.log(1 || true);
+console.log(undefined || null);
+
+restaurant.numGuests = 24;
+const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests);
+
+const guest1 = restaurant.numGuests || 10;
+console.log(guest1);
+
+// ## AND operator
+restaurant.numGuests = 24;
+const guest2 = restaurant.numGuests && 10;
+console.log(guest2);
+
+console.log('cheese' && 0 && 1);
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
