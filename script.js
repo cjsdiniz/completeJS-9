@@ -54,6 +54,11 @@ const restaurant = {
   },
 };
 
+let main = restaurant.mainMenu;
+let sec = restaurant.starterMenu;
+console.log(...main, ...sec);
+[main, sec] = [sec, main];
+console.log(...main, ...sec);
 // # 1) Destructuring: Spread operator
 // ## In Arrays
 /*
