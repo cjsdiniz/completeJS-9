@@ -304,6 +304,7 @@ rest2.owner &&= '<Anonymous>';
 console.log(rest1);
 console.log(rest2);
 
+// Examples
 const [a, b, ...rest] = [1, 2, 3, 4, 5];
 console.log(a, b, ...rest);
 
