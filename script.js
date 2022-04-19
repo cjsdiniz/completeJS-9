@@ -290,7 +290,7 @@ rest1.numGuests ||= 10;
 rest2.numGuests ||= 10;
 */
 /*
-// ### OR Assignment operator
+// ### Nullish Assignment operator (null or undefined)
 rest1.numGuests ??= 10;
 rest2.numGuests ??= 10;
 
@@ -303,16 +303,3 @@ rest1.owner &&= '<Anonymous>';
 rest2.owner &&= '<Anonymous>';
 console.log(rest1);
 console.log(rest2);
-
-// Examples
-const [a, b, ...rest] = [1, 2, 3, 4, 5];
-console.log(a, b, ...rest);
-
-const [a1, , b1, ...other] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(a1, b1, ...other);
-
-const { sat, ...wd } = restaurant.openingHours;
-console.log(sat, wd);
