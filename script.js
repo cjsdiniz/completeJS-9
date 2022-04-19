@@ -53,12 +53,13 @@ const restaurant = {
     console.log(mainIngr, ...otherIngr);
   },
 };
-
+/*
 let main = restaurant.mainMenu;
 let sec = restaurant.starterMenu;
 console.log(...main, ...sec);
 [main, sec] = [sec, main];
 console.log(...main, ...sec);
+*/
 // # 1) Destructuring: Spread operator
 // ## In Arrays
 /*
@@ -187,13 +188,17 @@ console.log(restaurantName, hours, tags);
 
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
-
+*/
+/*
 // ##Mutating variables
 let m = 111;
 let n = 999;
 const obj = { m: 23, n: 7, c: 14 };
 ({ m, n } = obj);
 console.log(m, n);
+*/
+
+/*
 // ## Nested objects
 const { fri } = openingHours;
 console.log(fri);
@@ -298,3 +303,15 @@ rest1.owner &&= '<Anonymous>';
 rest2.owner &&= '<Anonymous>';
 console.log(rest1);
 console.log(rest2);
+
+const [a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(a, b, ...rest);
+
+const [a1, , b1, ...other] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(a1, b1, ...other);
+
+const { sat, ...wd } = restaurant.openingHours;
+console.log(sat, wd);
