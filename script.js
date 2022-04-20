@@ -72,12 +72,21 @@ if (restaurant.openingHours && restaurant.openingHours.mon)
 console.log(restaurant.openingHours?.open);
 console.log(restaurant.openingHours?.mon?.open);
 
-// Example
+// ### Example
 const wdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 for (const d of wdays) {
   const open = restaurant.openingHours[d]?.open ?? 'closed';
   console.log(`On ${d}, we open at ${open}`);
 }
+
+// ### Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+// ### arrays
+//const users = [{ name: 'Mike', email: 'mike@mail.com' }];
+const users = [{ email: 'mike@mail.com' }];
+console.log(users[0]?.name ?? 'User array empty');
+
 /*
 let main = restaurant.mainMenu;
 let sec = restaurant.starterMenu;
