@@ -61,8 +61,23 @@ const restaurant = {
     console.log('Flag! 🚩');
   },
 };
-
 restaurant.orderFlag();
+
+// ## Optional chaining
+// ###  W/O Optional chaining
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// ### WITH optional chaining
+console.log(restaurant.openingHours?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example
+const wdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const d of wdays) {
+  const open = restaurant.openingHours[d]?.open ?? 'closed';
+  console.log(`On ${d}, we open at ${open}`);
+}
 /*
 let main = restaurant.mainMenu;
 let sec = restaurant.starterMenu;
