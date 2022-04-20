@@ -61,9 +61,35 @@ const restaurant = {
     console.log('Flag! 🚩');
   },
 };
+
+// ## Properties
+// ### Property Names
+
+const prop = Object.keys(openingHours);
+let openStr = 'Open days:';
+for (const d of prop) {
+  openStr += d + ' ';
+}
+console.log(openStr);
+
+// ### Property values
+const vals = Object.values(openingHours);
+console.log(vals);
+
+// ### Entire property
+const ent = Object.entries(openingHours);
+console.log(ent);
+for (const [key, { open, close }] of ent) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
 restaurant.orderFlag();
 
+// ### Property Values
+
+/*
 // ## Optional chaining
+
 // ###  W/O Optional chaining
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
@@ -86,7 +112,7 @@ console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
 //const users = [{ name: 'Mike', email: 'mike@mail.com' }];
 const users = [{ email: 'mike@mail.com' }];
 console.log(users[0]?.name ?? 'User array empty');
-
+*/
 /*
 let main = restaurant.mainMenu;
 let sec = restaurant.starterMenu;
