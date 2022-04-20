@@ -271,6 +271,7 @@ console.log(guestCorrect);
 */
 
 // ## Logical asssignment operators
+/*
 const rest1 = {
   name: 'Capri',
   numGuests: 20,
@@ -280,7 +281,7 @@ const rest2 = {
   name: 'La Piazza',
   owner: 'Giovanni Rossi',
 };
-
+*/
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
 
@@ -299,7 +300,19 @@ console.log('Rest2: ', rest2.numGuests);
 */
 
 // ### AND Assignment operator
+/*
 rest1.owner &&= '<Anonymous>';
 rest2.owner &&= '<Anonymous>';
 console.log(rest1);
 console.log(rest2);
+*/
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+
+for (const [i, j] of menu.entries()) {
+  console.log(`${i + 1}: ${j}`);
+}
