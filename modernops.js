@@ -30,6 +30,11 @@ const restaurant = {
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(ing1, ing2, ing3);
+    // console.log(ings);
+  },
 };
 
 // #Destructuring
@@ -80,3 +85,21 @@ console.log(bnArr);
 const nArr = [1, 2, ...arr1];
 console.log(nArr);
 console.log(...nArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy arrays
+const mainMenuCp = [...restaurant.mainMenu];
+console.log(mainMenuCp);
+
+// Join 2+ Arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets, NOT objects
+const str = 'palavra';
+console.log(...(str + 's'));
+console.log('🚩');
+const ings = ['cheese', 'ham', 'mushrooms'];
+restaurant.orderPasta(...ings);
