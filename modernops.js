@@ -1,6 +1,21 @@
+'use strict';
+
+// # DATA:
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
+  [weekdays[0]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[1]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[2]]: {
+    open: 12,
+    close: 22,
+  },
   //thu
   [weekdays[3]]: {
     open: 12,
@@ -37,6 +52,23 @@ const restaurant = {
   },
 };
 
+// # DATA END.
+
+// ### Array examples
+const arr = [1, 2, ...[3, 4]];
+
+const [a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(a, b, rest);
+console.log(a, b, ...rest);
+
+const [p, , r, ...rest1] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(p, r, ...rest1);
+
+// Objects examples
+const { sat, ...wdays } = restaurant.openingHours;
+console.log(wdays);
+
+/*
 // #Destructuring
 // ## Stardard
 const arr = [2, 3, 4];
@@ -101,5 +133,17 @@ console.log(menu);
 const str = 'palavra';
 console.log(...(str + 's'));
 console.log('🚩');
+
+// ### Example
 const ings = ['cheese', 'ham', 'mushrooms'];
 restaurant.orderPasta(...ings);
+
+// Objects
+const newRest = { founded: 1980, founder: 'Guiseppe', ...restaurant };
+console.log(newRest);
+
+const restCp = { ...restaurant };
+restCp.name = 'Roma Linda';
+console.log(restCp);
+
+*/
