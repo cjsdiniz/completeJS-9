@@ -39,6 +39,7 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  numGuests: 23,
   // ES6 enhanced object literals
   openingHours,
 
@@ -50,10 +51,69 @@ const restaurant = {
     console.log(ing1, ing2, ing3);
     // console.log(ings);
   },
+  orderPizza(mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(...otherIng);
+  },
 };
 
 // # DATA END.
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Rossi',
+};
 
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+// order pizza if function exists
+//if (restaurant.orderPizza) restaurant.orderPizza('cheese', 'tomato');
+/*
+console.log(3 || 'Me');
+console.log(3 && null && 'Me');
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+const guests3 = 10 && restaurant.numGuests;
+console.log(guests3);
+
+console.log('🚩');
+
+const guests4 = restaurant.numGuests ?? 10;
+console.log(guests4);
+
+const t = 1 && restaurant.numGuests && 2;
+console.log(t);
+*/
+/*
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+console.log('🚩');
+restaurant ?? orderPizza('mushrooms', 'spinach');
+
+restaurant.numGuests;
+
+*/
+/*
 // ### Array examples
 const arr = [1, 2, ...[3, 4]];
 
@@ -68,6 +128,23 @@ console.log(p, r, ...rest1);
 const { sat, ...wdays } = restaurant.openingHours;
 console.log(wdays);
 
+// 2.
+const add = function (...nums) {
+  let sum = 0;
+  for (const i of nums) {
+    sum += Number(i);
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(2, 3, 5);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('cheese', 'tomato', 'ham', 'mushrooms');
+*/
 /*
 // #Destructuring
 // ## Stardard
