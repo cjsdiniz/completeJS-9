@@ -28,3 +28,7 @@ console.log(staff);
 const uniqueStaff = new Set(staff);
 console.log(uniqueStaff);
 console.log(...uniqueStaff);
+console.log(
+  'Size: ',
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
