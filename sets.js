@@ -32,3 +32,4 @@ console.log(
   'Size: ',
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 );
+console.log(new Set('Diniz').size);
