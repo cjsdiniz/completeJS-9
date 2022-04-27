@@ -58,7 +58,10 @@ const restaurant = {
   },
 };
 
-const rest = new Map();
+const question = new Map(
+  ['question', "What's' your favorite colour?"],
+  [1, 'C#']
+);
 rest.set('name', 'Italiano');
 rest.set(1, 'Firenze, Italy');
 rest.set(2, 'Lisbon, Portugal');
