@@ -76,3 +76,14 @@ console.log(rest);
 
 const time = 8;
 console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+//rest.clear();
+const arr = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log('Size: ', rest.size);
+
+console.log(rest.get(arr));
