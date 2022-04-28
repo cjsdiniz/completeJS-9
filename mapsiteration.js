@@ -58,10 +58,46 @@ const restaurant = {
   },
 };
 
-const question = new Map(
+const question = new Map([
   ['question', "What's' your favorite colour?"],
-  [1, 'C#']
-);
+  [1, 'Blue'],
+  [2, 'Green'],
+  [3, 'Orange'],
+  ['correct', 3],
+  [true, 'Correct 🍕'],
+  [false, 'Try again'],
+]);
+console.log(question);
+
+// Convert Object to Map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Iteration
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const ans = Number(prompt('Answer:'));
+console.log(ans);
+// #1:
+ans === question.get('correct')
+  ? console.log(question.get(true))
+  : console.log(question.get(false));
+
+// #2:
+console.log(question.get(question.get('correct') === ans));
+
+// Convert Map to Array
+console.log(question);
+console.log([question]);
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+
+/*
 rest.set('name', 'Italiano');
 rest.set(1, 'Firenze, Italy');
 rest.set(2, 'Lisbon, Portugal');
@@ -90,3 +126,4 @@ console.log(rest);
 console.log('Size: ', rest.size);
 
 console.log(rest.get(arr));
+*/
