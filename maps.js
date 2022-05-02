@@ -78,7 +78,10 @@ const time = 8;
 console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
 console.log(rest.has('categories'));
+console.log(rest);
 rest.delete(2);
+console.log('🚩');
+console.log(rest);
 //rest.clear();
 const arr = [1, 2];
 rest.set(arr, 'Test');
