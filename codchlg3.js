@@ -41,3 +41,6 @@ console.log(events);
 console.log(gameEvents);
 gameEvents.delete(64);
 console.log(gameEvents);
+
+// #3.
+console.log(`An event happened, on average`);
