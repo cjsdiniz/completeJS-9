@@ -22,6 +22,7 @@ GOOD LUCK 😀
 let gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
+  [45, '⏲️ Timeout'],
   [47, '⚽️ GOAL'],
   [61, '🔁 Substitution'],
   [64, '🔶 Yellow card'],
@@ -34,7 +35,7 @@ let gameEvents = new Map([
 ]);
 
 // #1.
-const events = new Set([...gameEvents.values()]);
+const events = [...new Set(gameEvents.values())];
 console.log(events);
 
 // #2. Remote yellow card event
@@ -43,4 +44,17 @@ gameEvents.delete(64);
 console.log(gameEvents);
 
 // #3.
-console.log(`An event happened, on average`);
+
+console.log(
+  `An event happened, on average, every ${Math.round(
+    [...gameEvents.keys()].pop() / gameEvents.size,
+    2
+  )} minutes`
+);
+
+// #4.
+for (const [key, value] of gameEvents) {
+  let str = key <= 45 ? `[First Half]: ` : `[Second Half]: `;
+  // str += `${key} ${value}`;
+  console.log(`${str} ${key} ${value}`);
+}
