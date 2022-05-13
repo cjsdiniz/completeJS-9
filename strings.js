@@ -34,3 +34,28 @@ const checkMiddleseat = function (seat) {
 checkMiddleseat('11B');
 checkMiddleseat('22C');
 checkMiddleseat('3E');
+
+// Changing case
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization
+const passenger = 'cARloS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerLower);
+console.log(passengerCorrect);
+
+// Comparing / checking email address format
+const email = 'cjsdiniz@outmail.com';
+const loginEmail = '  CjSDiniz@OutMail.com \n';
+console.log(loginEmail);
+
+const lowerEmail = loginEmail.toLowerCase().trim();
+console.log(lowerEmail);
+
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$');
+console.log(priceUS);
