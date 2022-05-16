@@ -103,4 +103,17 @@ console.log(...'a+very+nice+string'.split('+'));
 console.log('Carlos Diniz'.split(' '));
 
 const [firstName, lastName] = 'Carlos Diniz'.split(' ');
-console.log(['Mr.', firstName, lastName.toUpperCase()].join(' '));
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const newPassenger = 'joão pedro silva';
+const nameCap = [];
+const capName = function (name) {
+  const a = name.split(' ');
+  for (const nm of a) {
+    nameCap.push(nm[0].toUpperCase() + nm.slice(1));
+  }
+  return nameCap;
+};
+
+console.log(...capName(newPassenger));
