@@ -35,6 +35,7 @@ checkMiddleseat('11B');
 checkMiddleseat('22C');
 checkMiddleseat('3E');
 
+// # Strings II
 // Changing case
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
@@ -94,3 +95,12 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some Food and a pocket Knife');
 checkBaggage('Socks and cameras');
 checkBaggage('Got some snacks and a gun for protection');
+
+// # Strings III
+// split the string
+console.log('a+very+nice+string'.split('+'));
+console.log(...'a+very+nice+string'.split('+'));
+console.log('Carlos Diniz'.split(' '));
+
+const [firstName, lastName] = 'Carlos Diniz'.split(' ');
+console.log(['Mr.', firstName, lastName.toUpperCase()].join(' '));
