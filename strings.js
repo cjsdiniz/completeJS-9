@@ -58,4 +58,39 @@ console.log(lowerEmail);
 // replacing
 const priceGB = '288,97£';
 const priceUS = priceGB.replace('£', '$');
+
 console.log(priceUS);
+
+const announcement = 'Boarding door 23! Boarding door 23!';
+console.log(announcement);
+// Change first occurrence
+console.log(announcement.replace('door', 'gate'));
+
+// Change  all occurences
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Change  all occurences, new way
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Booleans
+const newPlane = 'Airbus A320neo';
+console.log(newPlane.includes('A320'));
+console.log(newPlane.includes('Boeing'));
+console.log(newPlane.startsWith('Air'));
+console.log(newPlane.startsWith('air'));
+
+if (newPlane.startsWith('Airbus') && newPlane.endsWith('neo')) {
+  console.log('Part of the New Airbus family');
+}
+
+// Pratice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun'))
+    console.log('Your are not allowed');
+  else console.log('Welcome aboard');
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and cameras');
+checkBaggage('Got some snacks and a gun for protection');
