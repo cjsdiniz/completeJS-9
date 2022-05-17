@@ -107,13 +107,17 @@ const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
 console.log(newName);
 
 const newPassenger = 'joão pedro silva';
-const nameCap = [];
+
 const capName = function (name) {
+  const nameCap = [];
   const a = name.split(' ');
   for (const nm of a) {
-    nameCap.push(nm[0].toUpperCase() + nm.slice(1));
+    //console.log(nameCap);
+    //nameCap.push(nm[0].toUpperCase() + nm.slice(1)); // 1st optional
+    nameCap.push(nm.replace(nm[0], nm[0].toUpperCase())); // 2nd optional
   }
   return nameCap;
 };
 
 console.log(...capName(newPassenger));
+console.log(...capName('antónio miguel silva'));
