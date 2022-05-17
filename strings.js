@@ -121,3 +121,19 @@ const capName = function (name) {
 
 console.log(...capName(newPassenger));
 console.log(...capName('antónio miguel silva'));
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log('message'.padStart(25, '+'));
+console.log(message.padStart(25, '+').padEnd(36, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*'); //+ last;
+};
+
+console.log(maskCreditCard(12345678));
+console.log(maskCreditCard(82365873467675));
+console.log(maskCreditCard('823658734676754533'));
