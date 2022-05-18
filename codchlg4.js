@@ -3,20 +3,22 @@
 // Coding Challenge #4
 // Convert list to camelCase
 /* TEST DATA
-     underscore_case
-      first_name
-    Some_Variable
-      Calculate_AGE
-    delayed_departure
+  underscore_case
+  first_name
+Some_Variable
+  Calculate_AGE
+delayed_departure
 */
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
 document.querySelector('button').addEventListener('click', function () {
   let text = document.querySelector('textarea').value;
+  const rows = (text = text.split('\n'));
+
   //console.log(text);
   //convNames(varNames);
-  convNames(text);
+  convNames(rows);
 });
 
 const varNames = [
@@ -36,7 +38,7 @@ const convNames = function (names) {
     }
     const [fst, snd] = n.trim().toLowerCase().split('_');
     let ret = fst + snd[0].toUpperCase() + snd.slice(1);
-    ret = ret.padEnd(pad, ' ') + '✅'.repeat(c);
+    ret = ret.padEnd(pad) + '✅'.repeat(c);
     c++;
     console.log(ret);
   }
