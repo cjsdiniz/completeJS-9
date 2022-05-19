@@ -1,4 +1,8 @@
 'use strict';
+// # FUNCTIONS
+
+// ## Example 1
+
 const bookings = [];
 
 const createBooking = function (
@@ -20,3 +24,14 @@ const createBooking = function (
 createBooking('TAP123');
 createBooking('TAP123', 20);
 createBooking('TAP123', 25);
+
+// ## Example 2
+const flightNum = 'TP2022';
+const person = {
+  name: 'Luís Diniz',
+  passport: 164798654,
+};
+
+const checkIn = function (flightNum, person) {};
+
+checkIn(flightNum, person);
