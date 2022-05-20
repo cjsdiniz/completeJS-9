@@ -2,7 +2,7 @@
 // # FUNCTIONS
 
 // ## Example 1
-
+console.log('🚩 Example 1 ');
 const bookings = [];
 
 const createBooking = function (
@@ -26,6 +26,8 @@ createBooking('TAP123', 20);
 createBooking('TAP123', 25);
 
 // ## Example 2
+console.log('🚩 Example 2 ');
+
 const flightNum = 'TP2022';
 const person = {
   name: 'Luís Diniz',
