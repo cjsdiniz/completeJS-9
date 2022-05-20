@@ -39,9 +39,11 @@ const checkIn = function (flightNum, passenger) {
   passenger.name = 'Mr. ' + passenger.name;
 
   if (passenger.passport === 164798654) {
-    alert('Checked In');
+    // alert('Checked In');
+    console.log('Checked In');
   } else {
-    alert('Wrong passport');
+    // alert('Wrong passport');
+    console.log('Wrong passport');
   }
 };
 
@@ -56,3 +58,25 @@ const newPassport = function (person) {
 newPassport(person);
 checkIn(flight, person);
 console.log(person.passport);
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+const transformer = function (str, fn) {
+  console.log(fn(str));
+};
+
+transformer('Test phrase', upperFirstWord);
+transformer('Test phrase', oneWord);
+
+const high5 = function () {
+  console.log('✋');
+};
+
+document.body.addEventListener('click', high5);
