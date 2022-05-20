@@ -28,12 +28,31 @@ createBooking('TAP123', 25);
 // ## Example 2
 console.log('🚩 Example 2 ');
 
-const flightNum = 'TP2022';
+const flight = 'TP2022';
 const person = {
   name: 'Luís Diniz',
   passport: 164798654,
 };
 
-const checkIn = function (flightNum, person) {};
+const checkIn = function (flightNum, passenger) {
+  flightNum;
+  passenger.name = 'Mr. ' + passenger.name;
 
-checkIn(flightNum, person);
+  if (passenger.passport === 164798654) {
+    alert('Checked In');
+  } else {
+    alert('Wrong passport');
+  }
+};
+
+checkIn(flight, person);
+console.log(flight);
+console.log(person);
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 10000000000);
+};
+
+newPassport(person);
+checkIn(flight, person);
+console.log(person.passport);
