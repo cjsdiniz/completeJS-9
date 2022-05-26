@@ -75,8 +75,11 @@ const transformer = function (str, fn) {
 transformer('Test phrase', upperFirstWord);
 transformer('Test phrase', oneWord);
 
+// JS uses callbacks all the time
 const high5 = function () {
   console.log('✋');
 };
 
 document.body.addEventListener('click', high5);
+
+['Carlos', 'Pedro', 'Joaquim'].forEach(high5);
