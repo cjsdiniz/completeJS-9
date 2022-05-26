@@ -83,3 +83,18 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Carlos', 'Pedro', 'Joaquim'].forEach(high5);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeter = greet('Olá');
+greeter('Paulo');
+
+greet('Viva')('António');
+
+// Other way to write the Greet function
+const g = gr => n => console.log(`${gr} ${n}`);
+g('Olá')('Nuno');
