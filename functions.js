@@ -98,3 +98,17 @@ greet('Viva')('António');
 // Other way to write the Greet function
 const g = gr => n => console.log(`${gr} ${n}`);
 g('Olá')('Nuno');
+
+const tap = {
+  airline: 'TAP',
+  iataCode: 'TP',
+  bookings: [],
+  // book: function(){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+  },
+};
+
+tap.book('123', 'André');
