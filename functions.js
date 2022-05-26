@@ -75,29 +75,29 @@ const transformer = function (str, fn) {
 transformer('Test phrase', upperFirstWord);
 transformer('Test phrase', oneWord);
 
-// JS uses callbacks all the time
-const high5 = function () {
-  console.log('✋');
-};
+// // JS uses callbacks all the time
+// const high5 = function () {
+//   console.log('✋');
+// };
 
-document.body.addEventListener('click', high5);
+// document.body.addEventListener('click', high5);
 
-['Carlos', 'Pedro', 'Joaquim'].forEach(high5);
+// ['Carlos', 'Pedro', 'Joaquim'].forEach(high5);
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
-};
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
 
-const greeter = greet('Olá');
-greeter('Paulo');
+// const greeter = greet('Olá');
+// greeter('Paulo');
 
-greet('Viva')('António');
+// greet('Viva')('António');
 
-// Other way to write the Greet function
-const g = gr => n => console.log(`${gr} ${n}`);
-g('Olá')('Nuno');
+// // Other way to write the Greet function
+// const g = gr => n => console.log(`${gr} ${n}`);
+// g('Olá')('Nuno');
 
 const tap = {
   airline: 'TAP',
@@ -117,7 +117,7 @@ const lufthansa = {
   iataCode: 'LH',
   bookings: [],
 };
-
+/*
 tap.book('123', 'André');
 tap.book('456', 'José');
 console.log('🚩', tap);
@@ -142,3 +142,17 @@ bkTP(675, 'Luís');
 
 const bkLH24 = bk.bind(lufthansa, 24);
 bkLH24('Vitor');
+*/
+// With event listeners
+tap.planes = 100;
+tap.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document.querySelector('.buy').addEventListener('click', tap.buyPlane());
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.23, 100));
