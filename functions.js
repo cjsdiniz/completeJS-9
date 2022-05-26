@@ -108,7 +108,23 @@ const tap = {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
     );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
   },
 };
 
 tap.book('123', 'André');
+tap.book('456', 'José');
+console.log(tap);
+
+// Call method
+const bk = tap.book;
+bk.call(tap, 98, 'Nome');
+
+// Apply method
+const flight1 = [567, 'Jorge Reis'];
+bk.apply(tap, flight1);
+console.log(tap);
+
+bk.call(tap, ...flight1);
+
+//Bind method
