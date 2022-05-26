@@ -112,9 +112,15 @@ const tap = {
   },
 };
 
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+};
+
 tap.book('123', 'André');
 tap.book('456', 'José');
-console.log(tap);
+console.log('🚩', tap);
 
 // Call method
 const bk = tap.book;
@@ -127,4 +133,12 @@ console.log(tap);
 
 bk.call(tap, ...flight1);
 
+console.log('🚩🚩🚩');
 //Bind method
+const bkLH = bk.bind(lufthansa);
+const bkTP = bk.bind(tap);
+bkLH(49, 'Ricardo');
+bkTP(675, 'Luís');
+
+const bkLH24 = bk.bind(lufthansa, 24);
+bkLH24('Vitor');
