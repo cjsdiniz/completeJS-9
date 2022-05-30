@@ -156,3 +156,16 @@ document.querySelector('.buy').addEventListener('click', tap.buyPlane());
 // Partial application
 const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.23, 100));
+
+// ## IIFE
+console.log('🚩\n *** IIFE ***');
+
+(function () {
+  console.log('IIFE');
+})();
+
+// OR
+
+(() => {
+  console.log('Never run again');
+})();
