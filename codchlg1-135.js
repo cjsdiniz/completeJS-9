@@ -35,14 +35,14 @@ const poll = {
       n = Number(prompt(msg + '\nPlease enter a number (0 to 3)'));
     }
 
-    //addAnswer(n);
-    poll.answers[n] += 1;
-    // this.displayResults('string');
-    if (type === 'array') {
-      console.log(poll.answers);
-    } else {
-      console.log(`Poll results are ${poll.answers}`);
-    }
+    poll.addAnswer(n);
+    // poll.answers[n] += 1;
+    poll.displayResults('string');
+    // if (type === 'array') {
+    //   console.log(poll.answers);
+    // } else {
+    //   console.log(`Poll results are ${poll.answers}`);
+    // }
   },
 };
 
