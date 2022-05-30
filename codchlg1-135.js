@@ -9,12 +9,20 @@ const poll = {
     poll.answers[ans] += 1;
   },
 
+  displayResults(type) {
+    console.log(
+      type === 'string' ? `Poll results are ${[...poll.answers]}` : poll.answers
+    );
+  },
+
   registerNewAnswer() {
+    const type = 'array';
     const msg =
       poll.question +
       '\n' +
       poll.options.join('\n') +
       '\n(Write option number)';
+
     // poll.answers;
     // console.log();
     // console.log());
@@ -27,14 +35,14 @@ const poll = {
       n = Number(prompt(msg + '\nPlease enter a number (0 to 3)'));
     }
 
-    this.addAnswer(n);
-    this.displayResults('string');
-  },
-
-  displayResults(type) {
-    console.log(
-      type === 'string' ? `Poll results are ${[...poll.answers]}` : poll.answers
-    );
+    //addAnswer(n);
+    poll.answers[n] += 1;
+    // this.displayResults('string');
+    if (type === 'array') {
+      console.log(poll.answers);
+    } else {
+      console.log(`Poll results are ${poll.answers}`);
+    }
   },
 };
 
