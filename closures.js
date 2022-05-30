@@ -1,5 +1,6 @@
 'use strict';
 
+// ## Example
 const secureBooking = function () {
   let passengerCount = 0;
 
@@ -13,4 +14,25 @@ const booker = secureBooking();
 booker();
 booker();
 booker();
-booker();
+console.dir(booker);
+
+// ## Example 1
+
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 78;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+g();
+f();
+h();
+f();
