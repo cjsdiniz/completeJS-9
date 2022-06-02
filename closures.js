@@ -39,3 +39,17 @@ console.dir(f);
 h();
 f();
 console.dir(f);
+
+// Example #2
+// Timer
+const boardPassengers = function (n, wait) {
+  // const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`Now boarding ${n} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds ${perGroup} passengers`);
+};
+const perGroup = 1000;
+boardPassengers(180, 3);
