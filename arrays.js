@@ -127,3 +127,19 @@ console.log(dummy.at(-1));
 
 // With strings
 console.log('my name'.at(-1));
+
+/////////////////////////////////////////////////
+console.log('🚩 1st version:');
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  movement > 0
+    ? console.log(`Movement ${i} Deposited: ${movement}`)
+    : console.log(`Movement ${i} withdrew: ${movement}`);
+}
+
+console.log('🚩 2nd version:');
+movements.forEach((movement, i, arr) => {
+  movement > 0
+    ? console.log(`Movement ${i} Deposited: ${movement}`)
+    : console.log(`Movement ${i} withdrew: ${movement}`);
+});
