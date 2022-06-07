@@ -1,4 +1,5 @@
 'use strict';
+
 // Coding Challenge #1
 
 /* 
@@ -17,13 +18,23 @@ TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
 TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 */
-let dogsJulia = [3, 5, 2, 12, 7];
+
+const dogsJulia = [3, 5, 2, 12, 7];
 const dogsKate = [4, 1, 15, 8, 3];
 
-// const dogsJulia=[9, 16, 6, 8, 3];
-// const dogsKate= [10, 5, 6, 1, 4];
+// const dogsJulia = [9, 16, 6, 8, 3];
+// const dogsKate = [10, 5, 6, 1, 4];
 
-const checkDogs = () => {
-  return dogsJulia.slice(1, -1);
+const checkDogs = function (dJ, dK) {
+  const dJ1 = dJ.slice(1, -2);
+  const dB = [...dJ1, ...dK];
+  dB.forEach((value, key, map) => {
+    console.log(
+      value >= 3
+        ? `Dog number ${key + 1} is an adult, and is ${value} years old`
+        : `Dog number ${key + 1} is still a puppy 🐶`
+    );
+  });
+  return dB;
 };
-console.log(checkDogs());
+console.log(checkDogs(dogsJulia, dogsKate));
